@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea.MainPage"
+             Title="Calculadora IESS"
+             BackgroundColor="#F4F7FB">
+    <ScrollView>
+        <VerticalStackLayout Padding="24,32"
+                             Spacing="24"
+                             HorizontalOptions="Center"
+                             MaximumWidthRequest="560">
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Calculadora IESS"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="#16324F" />
+                <Label Text="Calcula tu aporte mensual de manera sencilla"
+                       FontSize="16"
+                       TextColor="#65758B" />
+            </VerticalStackLayout>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E5EAF1"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 24"
+                    Padding="22">
+                <Border.Shadow>
+                    <Shadow Brush="#000000" Opacity="0.08" Radius="18" Offset="0,8" />
+                </Border.Shadow>
+                <VerticalStackLayout Spacing="16">
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="Nombre" FontSize="14" FontAttributes="Bold" TextColor="#334155" />
+                        <Border BackgroundColor="#F7F9FC" Stroke="#E1E7EF" StrokeThickness="1" StrokeShape="RoundRectangle 12" Padding="12,0">
+                            <Entry x:Name="NameEntry" Placeholder="Ingresa tu nombre" TextColor="#16324F" PlaceholderColor="#94A3B8" HeightRequest="50" ReturnType="Next" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="Apellido" FontSize="14" FontAttributes="Bold" TextColor="#334155" />
+                        <Border BackgroundColor="#F7F9FC" Stroke="#E1E7EF" StrokeThickness="1" StrokeShape="RoundRectangle 12" Padding="12,0">
+                            <Entry x:Name="LastNameEntry" Placeholder="Ingresa tu apellido" TextColor="#16324F" PlaceholderColor="#94A3B8" HeightRequest="50" ReturnType="Next" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="Edad" FontSize="14" FontAttributes="Bold" TextColor="#334155" />
+                        <Border BackgroundColor="#F7F9FC" Stroke="#E1E7EF" StrokeThickness="1" StrokeShape="RoundRectangle 12" Padding="12,0">
+                            <Entry x:Name="AgeEntry" Placeholder="Ingresa tu edad" Keyboard="Numeric" MaxLength="3" TextColor="#16324F" PlaceholderColor="#94A3B8" HeightRequest="50" ReturnType="Next" TextChanged="OnAgeTextChanged" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="Salario mensual" FontSize="14" FontAttributes="Bold" TextColor="#334155" />
+                        <Border BackgroundColor="#F7F9FC" Stroke="#E1E7EF" StrokeThickness="1" StrokeShape="RoundRectangle 12" Padding="12,0">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="#1565C0" VerticalOptions="Center" />
+                                <Entry x:Name="SalaryEntry" Grid.Column="1" Placeholder="Ingresa tu salario" Keyboard="Numeric" TextColor="#16324F" PlaceholderColor="#94A3B8" HeightRequest="50" ReturnType="Done" TextChanged="OnSalaryTextChanged" />
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Border BackgroundColor="#EEF5FF" StrokeThickness="0" StrokeShape="RoundRectangle 12" Padding="14,12" Margin="0,4,0,0">
+                        <Label Text="Porcentaje de aporte: 9,45 %" FontSize="14" FontAttributes="Bold" TextColor="#1565C0" />
+                    </Border>
+
+                    <Button Text="Calcular aporte"
+                            Clicked="OnCalculateClicked"
+                            BackgroundColor="#1565C0"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            CornerRadius="14"
+                            HeightRequest="54"
+                            Margin="0,4,0,0" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Aplicación académica · .NET MAUI"
+                   FontSize="12"
+                   TextColor="#94A3B8"
+                   HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
